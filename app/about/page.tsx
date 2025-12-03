@@ -34,17 +34,7 @@ export default function AboutMe() {
             </ul>
           </div>
 
-          <div className="bg-linear-to-r from-blue-200 to-purple-200 rounded-xl p-4 shadow-md hover:scale-105 transition-transform">
-            <h2 className="text-xl font-bold mb-2 flex items-center gap-2">
-              <span role="img" aria-label="Hobbies">🎨</span> Hobbies
-            </h2>
-            <ul className="text-left text-gray-700 list-disc list-inside">
-              <li>Digital Art & Design</li>
-              <li>Gaming & Streaming</li>
-              <li>Music Production</li>
-              <li>Travel & Photography</li>
-            </ul>
-          </div>
+         
         </div>
 
         <div className="mt-8">
