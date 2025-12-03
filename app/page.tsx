@@ -1,12 +1,20 @@
-import   DownloaderForm  from '@components/DownloaderForm';
-export default function Page() {
+import "./globals.css";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
+
+export const metadata = {
+  title: "My Portfolio",
+  description: "Portfolio website built with Next.js & Tailwind",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-700 text-white p-4">
-      <h1 className="text-3xl font-bold mb-6">🎬 Universal Video Downloader</h1>
-      <DownloaderForm />
-      <footer className="mt-10 text-sm text-gray-500">
-        Built with ❤️ using Next.js + Tailwind
-      </footer>
-    </main>
+    <html lang="en">
+      <body className="bg-gray-950 text-gray-100">
+        <Navbar />
+        <main className="min-h-screen pt-20 px-6">{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }
