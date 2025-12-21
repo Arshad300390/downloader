@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   images: {
-    domains: ['api.dicebear.com'],
+    domains: ['api.dicebear.com', 'img.freepik.com','via.placeholder.com'],
   },
 };
 
