@@ -36,6 +36,11 @@ const exercises = [
     desc: "showing multiple images in a carousel format",
     link: "/projects/imageCarousel",
   },
+  {
+    title: "Code Review Feedback",
+    desc: "A code review feedback application built with Next.js and Tailwind CSS",
+    link: "/projects/codeReviewFeedback",
+  },
 ]
 
 export default function Projects() {
