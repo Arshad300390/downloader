@@ -1,5 +1,6 @@
 "use client";
 
+import { link } from "fs";
 import Link from "next/dist/client/link";
 
 const projects = [
@@ -14,6 +15,7 @@ const projects = [
   {
     title: "Realtime Chat App",
     desc: "Socket.io | Node.js | MongoDB",
+    href: "https://node-chat-app-f9sl.onrender.com/"
   },
   {
     title: "Portfolio Website",
@@ -41,6 +43,11 @@ const exercises = [
     desc: "A code review feedback application built with Next.js and Tailwind CSS",
     link: "/projects/codeReviewFeedback",
   },
+  {
+    title: "Article Sorter",
+    desc: "An article sorter application built with Next.js and Tailwind CSS",
+    link: "/projects/articleSort",
+  }
 ]
 
 export default function Projects() {
@@ -61,6 +68,15 @@ export default function Projects() {
             >
               <h3 className="text-xl font-bold mb-3">{p.title}</h3>
               <p className="text-gray-700">{p.desc}</p>
+              <div className="mt-auto flex justify-center">
+                {p.href ? (
+                  <Link href={p.href}>
+                    <button className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition">
+                      View Project
+                    </button>
+                  </Link>
+                ) : null}
+              </div>
             </div>
           ))}
         </div>
