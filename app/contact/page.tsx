@@ -6,7 +6,7 @@ export default function Contact() {
   // Use the full international format without '+' or '00'
   // 92 is the country code for Pakistan
   const phoneNumber = "923489686876"; 
-  const message = encodeURIComponent("Hi! I'm interested in your services and would like to chat.");
+  const message = encodeURIComponent("Hi Arshad! I'm interested in your services and would like to take your services.Can you please contact me?"); // Pre-filled message for WhatsApp  
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
