@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function AboutMe() {
   return (
     <div className="min-h-screen bg-linear-to-br from-pink-400 via-purple-400 to-blue-400 flex flex-col items-center p-6">
@@ -23,12 +23,12 @@ export default function AboutMe() {
         </div>
 
         <div className="mt-8">
-          <a
-            href="mailto:funtastic.dev@email.com"
+          <Link
+            href="/contact"
             className="inline-block px-6 py-3 bg-linear-to-r from-pink-500 to-blue-500 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-transform"
           >
             📧 Contact Me
-          </a>
+          </Link>
         </div>
       </div>
 
