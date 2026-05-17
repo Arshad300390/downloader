@@ -1,6 +1,5 @@
 "use client";
 
-import { link } from "fs";
 import Link from "next/dist/client/link";
 
 const projects = [
