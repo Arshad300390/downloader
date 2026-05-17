@@ -4,60 +4,61 @@ import React, { useState } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const navItems = ["Home", "About", "Projects", "Contact"];
+
   return (
-    <nav className="bg-white shadow-md fixed w-full z-20 top-0 left-0">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo/Brand */}
-        <div className="text-2xl font-extrabold text-blue-600 tracking-tight">
-          MySite
+    <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+      <div className="max-w-7xl mx-auto px-3 sm:px-5">
+        {/* Top Navbar */}
+        <div className="flex items-center justify-between h-14">
+          
+          {/* Logo */}
+          <div className="text-xl font-extrabold bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent truncate">
+            Arshad.dev
+          </div>
+
+          {/* Hamburger */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-2xl"
+          >
+            {open ? "✕" : "☰"}
+          </button>
+
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex items-center gap-6">
+            {navItems.map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  className="font-semibold text-gray-800 hover:text-purple-500 transition"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        {/* Hamburger Icon */}
-        <button
-          className="sm:hidden text-3xl focus:outline-none"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? "✕" : "☰"}
-        </button>
-        {/* Nav Links */}
-        <ul
-          className={`flex flex-col sm:flex-row sm:items-center absolute sm:static left-0 w-full sm:w-auto bg-white sm:bg-transparent transition-all duration-300 ease-in ${
-            open ? "top-16" : "top-[-400px]"
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            open ? "max-h-96 pb-4" : "max-h-0"
           }`}
         >
-          <li className="mx-4 my-2 sm:my-0">
-            <a
-              href="#"
-              className="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 hover:text-blue-600 transition"
-            >
-              Home
-            </a>
-          </li>
-          <li className="mx-4 my-2 sm:my-0">
-            <a
-              href="#"
-              className="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 hover:text-blue-600 transition"
-            >
-              About
-            </a>
-          </li>
-          <li className="mx-4 my-2 sm:my-0">
-            <a
-              href="#"
-              className="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 hover:text-blue-600 transition"
-            >
-              Projects
-            </a>
-          </li>
-          <li className="mx-4 my-2 sm:my-0">
-            <a
-              href="#"
-              className="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 hover:text-blue-600 transition"
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
+          <ul className="flex flex-col gap-2 pt-2">
+            {navItems.map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  className="block w-full px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-purple-100"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
